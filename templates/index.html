@@ -7,31 +7,31 @@
         <form action="/" method="POST">
             <div class="mb-3">
               <label for="title" class="form-label">First Name</label>
-              <input type="text" class="form-control" name="title" id="title" aria-describedby="emailHelp"> 
+              <input type="text" class="form-control" name="first_name" id="first_name"> 
             </div>
             <div class="mb-3">
               <label for="desc" class="form-label">Middle Name</label>
-              <input type="text" class="form-control" name="desc" id="desc">
+              <input type="text" class="form-control" name="middle_name" id="middle_name">
             </div>
 
             <div class="mb-3">
                 <label for="desc" class="form-label">Last Name</label>
-                <input type="text" class="form-control" name="desc" id="desc">
+                <input type="text" class="form-control" name="last_name" id="last_name">
               </div>
 
               <div class="mb-3">
                 <label for="desc" class="form-label">Employee Contact NO.</label>
-                <input type="text" class="form-control" name="desc" id="desc">
+                <input type="text" class="form-control" name="employee_contact_no" id="employee_contact_no">
               </div>
 
               <div class="mb-3">
                 <label for="desc" class="form-label">Employee Address</label>
-                <input type="text" class="form-control" name="desc" id="desc">
+                <input type="text" class="form-control" name="employee_address" id="employee_address">
               </div>
 
               <div class="mb-3">
                 <label for="desc" class="form-label">Employee Mail Address</label>
-                <input type="text" class="form-control" name="desc" id="desc">
+                <input type="text" class="form-control" name="employee_mail_address" id="employee_mail_address">
               </div>
 
             <button type="submit" class="btn btn-dark">Submit</button>
@@ -40,7 +40,7 @@
     <div class="container my-3">
         <h2>Employee List</h2>
         
-                {% if allTodo|length == 0 %}
+                {% if allEmployee|length == 0 %}
                    
                 <div class="alert alert-dark" role="alert">
                     No Employee found. Add Employee now!
@@ -61,15 +61,15 @@
                         </thead>
                         
                         <tbody>
-              {% for todo in allTodo %}
+              {% for Employee in allEmployee %}
               <tr>
                 <th scope="row">{{loop.index}}</th>
-                <td>{{todo.title}}</td>
-                <td>{{todo.desc}}</td>
-                <td>{{todo.date_created}}</td>
+                <td>{{Employee.title}}</td>
+                <td>{{Employee.desc}}</td>
+                <td>{{Employee.date_created}}</td>
                 <td>
-                  <a href="/update/{{todo.sno}}" type="button" class="btn btn-outline-dark btn-sm mx-1">Update</button>
-                  <a href="/delete/{{todo.sno}}" type="button" class="btn btn-outline-dark btn-sm mx-1">Delete</button>
+                  <a href="/update/{{Employee.sno}}" type="button" class="btn btn-outline-dark btn-sm mx-1">Update</button>
+                  <a href="/delete/{{Employee.sno}}" type="button" class="btn btn-outline-dark btn-sm mx-1">Delete</button>
                 
                 </td>
               </tr>
